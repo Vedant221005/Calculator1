@@ -1,0 +1,83 @@
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    margin: 0;
+    background-color: #1e1e1e; 
+    font-family: Arial, sans-serif;
+}
+
+.calculator {
+    width: 300px;
+    background-color: #333; 
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+}
+
+#display {
+    width: 90%;
+    padding: 20px;
+    font-size: 24px;
+    text-align: right;
+    background-color: #222; 
+    color: #fff; 
+    border: none;
+    outline: none;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+    padding: 20px;
+}
+
+.btn {
+    padding: 20px;
+    font-size: 18px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.btn.clear,
+.btn.backspace {
+    font-size: 25px;
+    background-color: #998f24;
+    color: #fff;
+}
+
+#clear {
+    grid-column: span 2; 
+}
+
+.backspace {
+    grid-column: span 2; 
+}
+
+.btn[data-value="="] {
+    font-size: 24px;
+    background-color: #ffa319; 
+    color: #fff;
+}
+
+.btn[data-value="+"],
+.btn[data-value="-"],
+.btn[data-value="*"],
+.btn[data-value="/"] {
+    font-size: 24px;
+    background-color: #3a86ff; 
+    color: #fff;
+}
+
+.btn:not([data-value="="]):not([data-value="C"]):not([data-value="backspace"]):not([data-value="+"]):not([data-value="-"]):not([data-value="*"]):not([data-value="/"]) {
+    background-color: #4caf50; 
+    color: #fff;
+}
+
+.btn:hover {
+    background-color: #555; 
+}
